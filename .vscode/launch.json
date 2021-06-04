@@ -13,17 +13,15 @@
 			"stopOnEntry": false,
 			"runtimeExecutable": null,
 			"env": {
-				"NODE_ENV": "test" // You can setup here any env vars you want
+				"NODE_ENV": "test" // You can setup here any env vars you
 			},
 			"runtimeArgs": [
 				"--inspect-brk",
 				"${workspaceRoot}\\node_modules\\jest\\bin\\jest.js", // Path to Jest
 				"-i",
-				"--detectOpenHandles",
-				"--forceExit"
+				"--detectOpenHandles"
 			],
-			"cwd": "${workspaceRoot}",
-			"envFile": "${workspaceRoot}/.env"
+			"cwd": "${workspaceRoot}"
 		}
 	]
 }

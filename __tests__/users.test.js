@@ -1,4 +1,3 @@
-process.env.NODE_ENV = 'test';
 const db = require('../db');
 const User = require('../models/user');
 const Message = require('../models/message');
@@ -15,7 +14,6 @@ describe('Test User class', function () {
 			phone: '+14155550000'
 		});
 	});
-
 	test('can register', async function () {
 		let u = await User.register({
 			username: 'joel',
