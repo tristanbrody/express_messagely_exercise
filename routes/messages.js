@@ -3,7 +3,7 @@ const { SECRET_KEY } = require('../config');
 const router = new express.Router();
 const db = require('../db');
 require('../config');
-const { Message } = require('../models/messages');
+const { Message } = require('../models/message');
 
 router.get('/:id', async function (req, res, next) {
 	try {
@@ -52,3 +52,5 @@ router.post('/:id/read', async function (req, res, next) {
 		return next(err);
 	}
 });
+
+module.exports = router;

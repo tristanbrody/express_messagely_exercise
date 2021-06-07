@@ -42,3 +42,5 @@ router.get('/:username/from', async function (req, res, next) {
 		return next(err);
 	}
 });
+
+module.exports = router;

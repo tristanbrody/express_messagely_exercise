@@ -12,6 +12,8 @@
 			"address": "localhost",
 			"stopOnEntry": false,
 			"runtimeExecutable": null,
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
 			"env": {
 				"NODE_ENV": "test" // You can setup here any env vars you
 			},

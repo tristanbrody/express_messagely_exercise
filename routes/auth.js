@@ -2,8 +2,11 @@ const express = require('express');
 const { SECRET_KEY } = require('../config');
 const router = new express.Router();
 const db = require('../db');
+db.connect();
 require('../config');
-const { User } = require('../models/users');
+const User = require('../models/user');
+const jwt = require('jsonwebtoken');
+const ExpressError = require('../expressError');
 
 router.post('/login', async function (req, res, next) {
 	try {
@@ -23,11 +26,12 @@ router.post('/login', async function (req, res, next) {
 
 router.post('/register', async function (req, res, next) {
 	try {
-		const { username, password, first_name, last_name, phone } = req.body;
-		await User.register(username, password, first_name, last_name, phone);
+		let { username } = await User.register(req.body);
 		const token = jwt.sign({ username }, SECRET_KEY);
 		return res.json({ token });
 	} catch (err) {
 		return next(err);
 	}
 });
+
+module.exports = router;
